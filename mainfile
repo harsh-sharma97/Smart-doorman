@@ -1,0 +1,22 @@
+int buzzpin= 7;
+int sensor= A0;
+boolean val1;
+void setup()
+{
+  pinMode(buzzpin, OUTPUT);
+  pinMode(sensor, INPUT);
+  Serial.begin(9600);
+}
+void loop()
+{
+  val1=analogRead(sensor);
+  Serial.println(val1);
+  delay(100);
+  val2=analogRead(sensor);
+  if(abs(val1)>0)
+  {
+    digitalWrite(buzzpin,HIGH);
+    delay(500);
+    digitalWrite(buzzpin,LOW);
+  }
+}
